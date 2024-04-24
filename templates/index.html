@@ -13,14 +13,22 @@
                  <label for="amount">Amount:</label>
                  <input type="number" id="amount" step="any" required>
                  <label for="fromCurrency">From Currency:</label>
-                 <input type="text" id="fromCurrency" maxlength="3" required>
+    		 <select id="fromCurrency" required>
+        	     <option value="" disabled selected>Select From Currency</option>
+        	     <!-- I Populated dynamically with currency options in script -->
+                     <!-- Example: <option value="USD">United States Dollar (USD)</option> -->
+    		</select>
+    
                  <label for="toCurrency">To Currency:</label>
-                 <input type="text" id="toCurrency" maxlength="3" required>
-                 <button type="submit">Convert</button>
+    		 <select id="toCurrency" required>
+        	     <option value="" disabled selected>Select From Currency</option>
+    		</select>
+    		<button type="submit">Convert</button>
              </form>
              <div id="result"></div>
          </div>
+    
          <script src="script.js"></script>
+         <script src="currencyList.js"></script>
      </body>
      </html>
-
