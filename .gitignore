@@ -1,0 +1,8 @@
+node_modules/
+tools/
+.*.sw?
+*.pyc
+__p*
+~*
+.*
+test.py
