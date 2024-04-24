@@ -43,4 +43,4 @@ def convert_currency(amount, from_currency, to_currency):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=8000)
