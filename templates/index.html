@@ -1,34 +1,34 @@
 <!DOCTYPE html>
-     <html lang="en">
-     <head>
-         <meta charset="UTF-8">
-         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-         <title>Currency Converter</title>
-         <link rel="stylesheet" href="styles.css">
-     </head>
-     <body>
-         <div class="container">
-             <h1>Currency Converter</h1>
-             <form id="conversion-form">
-                 <label for="amount">Amount:</label>
-                 <input type="number" id="amount" step="any" required>
-                 <label for="fromCurrency">From Currency:</label>
-    		 <select id="fromCurrency" required>
-        	     <option value="" disabled selected>Select From Currency</option>
-        	     <!-- I Populated dynamically with currency options in script -->
-                     <!-- Example: <option value="USD">United States Dollar (USD)</option> -->
-    		</select>
-    
-                 <label for="toCurrency">To Currency:</label>
-    		 <select id="toCurrency" required>
-        	     <option value="" disabled selected>Select From Currency</option>
-    		</select>
-    		<button type="submit">Convert</button>
-             </form>
-             <div id="result"></div>
-         </div>
-    
-         <script src="script.js"></script>
-         <script src="currencyList.js"></script>
-     </body>
-     </html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Currency Converter</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+	</head>
+	<body>
+		<div class="container">
+			<h1>Currency Converter</h1>
+			<form id="conversion-form">
+				<label for="amount">Amount:</label>
+				<input type="number" id="amount" step="any" required>
+				<label for="fromCurrency">From Currency:</label>
+				<select id="fromCurrency" required>
+					<option value="" disabled selected>Select From Currency</option>
+					<!-- I Populated dynamically with currency options in script -->
+					<!-- Example: <option value="USD">United States Dollar (USD)</option> -->
+				</select>
+
+				<label for="toCurrency">To Currency:</label>
+				<select id="toCurrency" required>
+					<option value="" disabled selected>Select From Currency</option>
+				</select>
+				<button type="submit">Convert</button>
+			</form>
+			<div id="result"></div>
+		</div>
+
+		<script src="{{ url_for('static', filename='script.js') }}"></script>
+		<script src="{{ url_for('static', filename='currencyList.js') }}"></script>
+	</body>
+</html>
