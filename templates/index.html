@@ -4,11 +4,28 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Currency Converter</title>
-		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/styles.css') }}">
 	</head>
 	<body>
+		<header class="header">
+			<div class="logo-container">
+				<img src="{{ url_for('static', filename='images/logo.png') }}" alt="CurrencyMate Logo" class="logo">
+				<div class="logo-text">
+					<h1 class="logo-name">CurrencyMate</h1>
+					<p class="slogan">Your Conversion Companion, Wherever You Go</p>
+				</div>
+			</div>
+			<nav class="tabs">
+				<ul>
+					<li><a href="#home">Home</a></li>
+					<li class="active"><a href="#converter">Converter</a></li>
+					<li class="active"><a href="#converter">Help</a></li>
+					<li class="active"><a href="#converter">About Us</a></li>
+					<li class="active"><a href="#converter">Contact Us</a></li>
+				</ul>
+			</nav>
+		</header>
 		<div class="container">
-			<h1>Currency Converter</h1>
 			<form id="conversion-form">
 				<label for="amount">Amount:</label>
 				<input type="number" id="amount" step="any" required>
@@ -27,8 +44,24 @@
 			</form>
 			<div id="result"></div>
 		</div>
+		<section class="about">
+			<h2>About CurrencyMate</h2>
+			<p>This user-friendly currency converter allows you to convert between a wide range of major and minor currencies. Our extensive list is constantly updated to reflect the global market, ensuring you receive accurate exchange rates.</p>
+		</section>
+		<section class="features">
+			<h2>More Features:</h2>
+			<ul>
+				<li>Live exchange rates for real-time conversions.</li>
+			</ul>
+		</section>
 
-		<script src="{{ url_for('static', filename='script.js') }}"></script>
-		<script src="{{ url_for('static', filename='currencyList.js') }}"></script>
+		<section class="security">
+			<h2>Security and Privacy</h2>
+			<p>Your financial data is secure. We employ industry-standard security practices to safeguard your information. We are committed to protecting your privacy and will never share your data with third parties without your consent. For more details, please refer to our <a href="#">Privacy Policy</a>.</p>
+		</section>
+
+
+		<script src="{{ url_for('static', filename='scripts/script.js') }}"></script>
+		<script src="{{ url_for('static', filename='scripts/currencyList.js') }}"></script>
 	</body>
 </html>
