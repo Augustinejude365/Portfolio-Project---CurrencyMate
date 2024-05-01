@@ -8,8 +8,8 @@ body {
 
 .header {
 	position: fixed;
-    top: 0;
-    left: 0;
+	top: 0;
+	left: 0;
 	width: 100%;
 	background-color: #02226f;
 	padding: 10px 0;
@@ -40,6 +40,8 @@ body {
 .header.scrolled .logo {
 	height: 75px;
 	width: 97px;
+	margin-right: 0px;
+	margin-top: -7px;
 }
 
 .logo-text {
@@ -95,7 +97,11 @@ body {
 	padding: 10px 20px;
 	font-weight: 600;
 	font-size: 16px;
-	transition: font-size 0.3s ease, padding 0.3s ease;
+	transition: font-size 0.3s ease, padding 0.3s ease, color 0.3s ease;
+}
+
+.tabs ul li a:hover {
+	color: lightblue;
 }
 
 .header.scrolled .tabs ul li a {
@@ -106,14 +112,17 @@ body {
 
 /******** OUR FORM STYLE HERE ***********/
 .container {
-	margin: 150px auto;
+	margin: auto;
+	margin-top: 150px;
+	margin-bottom: 100px;
 	display: flex;
 	flex-direction: column;
 	width: fit-content;
 	padding: 20px;
 	border: 1px solid #ccc;
-	border-radius: 5px;
+	border-radius: 7px;
 	max-width: 1000px;
+	box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.2);
 }
 
 .flex-form {
@@ -121,6 +130,13 @@ body {
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
+}
+
+.flex-form p {
+	font-weight: 700;
+	color: #02226f;
+	font-size: 18px;
+	font-family: "Josefin Sans", sans-serif;
 }
 
 .flex-button {
@@ -135,6 +151,7 @@ body {
 
 .form-group {
 	margin: 10px;
+	font-family: "Josefin Sans", sans-serif;
 	font-weight: 600;
 }
 
@@ -147,16 +164,15 @@ body {
 	margin-top: 7px;
 	width: 100%;
 	height: 50px;
-
-	/* Add shadow effect */
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-	transition: box-shadow 0.3s ease;
+	font-family: "Josefin Sans", sans-serif;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
+.form-group input[type="number"]:hover,
+.form-group select:hover,
 .form-group input[type="number"]:focus,
 .form-group select:focus {
 	outline: 1px solid #02226f;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 
