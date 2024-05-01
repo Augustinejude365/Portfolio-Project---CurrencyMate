@@ -7,20 +7,39 @@ body {
 }
 
 .header {
+	position: fixed;
+    top: 0;
+    left: 0;
+	width: 100%;
 	background-color: #02226f;
 	padding: 10px 0;
 	display: flex;
 	align-items: center;
+	transition: box-shadow 0.3s ease, padding 0.3s ease;
+	z-index: 1000;
+}
+
+.header.scrolled {
+	padding: 0;
+	box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.3); /* Add shadow when scrolled */
 }
 
 .logo-container {
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .logo {
-  margin-right: 10px;
-  margin-top: -10px;
+	height: 100px;
+	width: 130px;
+	margin-right: 10px;
+	margin-top: -10px;
+	transition: height 0.3s ease, width 0.3s ease;
+}
+
+.header.scrolled .logo {
+	height: 75px;
+	width: 97px;
 }
 
 .logo-text {
@@ -35,13 +54,25 @@ body {
 	font-size: 3em;
 	margin: 0;
 	font-size: 50px;
+	transition: font-size 0.3s ease;
 }
+
+
+.header.scrolled .logo-name {
+	font-size: 35px;
+}
+
 
 .slogan {
 	font-family: "Josefin Sans", sans-serif;
 	color: white;
 	margin: 5px 0;
 	font-size: 12px;
+	transition: font-size 0.3s ease;
+}
+
+.header.scrolled .slogan {
+	font-size: 9px;
 }
 
 .tabs {
@@ -51,7 +82,7 @@ body {
 .tabs ul {
 	list-style: none;
 	margin: 0;
-	padding: 0;
+	padding-right: 30px;
 }
 
 .tabs ul li {
@@ -61,17 +92,24 @@ body {
 .tabs ul li a {
 	color: white;
 	text-decoration: none;
-	padding: 10px 25px;
+	padding: 10px 20px;
 	font-weight: 600;
+	font-size: 16px;
+	transition: font-size 0.3s ease, padding 0.3s ease;
+}
+
+.header.scrolled .tabs ul li a {
+	font-size: 14px;
+	padding: 5px 10px;
 }
 
 
 /******** OUR FORM STYLE HERE ***********/
 .container {
+	margin: 150px auto;
 	display: flex;
 	flex-direction: column;
 	width: fit-content;
-	margin: 50px auto;
 	padding: 20px;
 	border: 1px solid #ccc;
 	border-radius: 5px;
@@ -117,8 +155,8 @@ body {
 
 .form-group input[type="number"]:focus,
 .form-group select:focus {
-    outline: 1px solid #02226f;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	outline: 1px solid #02226f;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 
