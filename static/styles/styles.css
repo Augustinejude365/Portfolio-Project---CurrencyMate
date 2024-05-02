@@ -12,7 +12,6 @@ body {
 	left: 0;
 	width: 100%;
 	background-color: #02226f;
-	padding: 10px 0;
 	display: flex;
 	align-items: center;
 	transition: box-shadow 0.3s ease, padding 0.3s ease;
@@ -27,13 +26,12 @@ body {
 .logo-container {
 	display: flex;
 	align-items: center;
+	margin-top: -8px;
 }
 
 .logo {
 	height: 100px;
 	width: 130px;
-	margin-right: 10px;
-	margin-top: -10px;
 	transition: height 0.3s ease, width 0.3s ease;
 }
 
@@ -41,7 +39,6 @@ body {
 	height: 75px;
 	width: 97px;
 	margin-right: 0px;
-	margin-top: -7px;
 }
 
 .logo-text {
@@ -55,13 +52,13 @@ body {
 	font-style: normal;
 	font-size: 3em;
 	margin: 0;
-	font-size: 50px;
+	font-size: 40px;
 	transition: font-size 0.3s ease;
 }
 
 
 .header.scrolled .logo-name {
-	font-size: 35px;
+	font-size: 28px;
 }
 
 
@@ -69,12 +66,12 @@ body {
 	font-family: "Josefin Sans", sans-serif;
 	color: white;
 	margin: 5px 0;
-	font-size: 12px;
+	font-size: 10px;
 	transition: font-size 0.3s ease;
 }
 
 .header.scrolled .slogan {
-	font-size: 9px;
+	font-size: 7px;
 }
 
 .tabs {
@@ -84,7 +81,7 @@ body {
 .tabs ul {
 	list-style: none;
 	margin: 0;
-	padding-right: 30px;
+	padding-right: 50px;
 }
 
 .tabs ul li {
@@ -96,7 +93,7 @@ body {
 	text-decoration: none;
 	padding: 10px 20px;
 	font-weight: 600;
-	font-size: 16px;
+	font-size: 14px;
 	transition: font-size 0.3s ease, padding 0.3s ease, color 0.3s ease;
 }
 
@@ -105,7 +102,7 @@ body {
 }
 
 .header.scrolled .tabs ul li a {
-	font-size: 14px;
+	font-size: 12px;
 	padding: 5px 10px;
 }
 
