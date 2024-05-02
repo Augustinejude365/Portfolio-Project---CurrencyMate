@@ -19,54 +19,54 @@ body {
 }
 
 .header.scrolled {
-	padding: 0;
 	box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.3); /* Add shadow when scrolled */
 }
 
 .logo-container {
 	display: flex;
 	align-items: center;
-	margin-top: -8px;
+	padding: 2px 0;
 }
 
 .logo {
-	height: 100px;
-	width: 130px;
+	height: 64px;
+	width: 73px;
 	transition: height 0.3s ease, width 0.3s ease;
+	margin-right: 5px
 }
 
 .header.scrolled .logo {
-	height: 75px;
-	width: 97px;
-	margin-right: 0px;
+	height: 48px;
+	width: 55px;
 }
 
 .logo-text {
+	margin-top: -5px;
 	color: white;
 	text-align: right;
 }
 
 .logo-name {
+	margin: 0;
+	margin-top: -1px;
 	font-family: "Merienda", cursive;
 	font-weight: 400;
 	font-style: normal;
-	font-size: 3em;
-	margin: 0;
-	font-size: 40px;
+	font-size: 37px;
 	transition: font-size 0.3s ease;
 }
 
 
 .header.scrolled .logo-name {
-	font-size: 28px;
+	font-size: 29px;
 }
 
 
 .slogan {
+	margin: 0;
+	margin-top: 1px;
 	font-family: "Josefin Sans", sans-serif;
-	color: white;
-	margin: 5px 0;
-	font-size: 10px;
+	font-size: 9px;
 	transition: font-size 0.3s ease;
 }
 
@@ -80,7 +80,6 @@ body {
 
 .tabs ul {
 	list-style: none;
-	margin: 0;
 	padding-right: 50px;
 }
 
@@ -91,7 +90,7 @@ body {
 .tabs ul li a {
 	color: white;
 	text-decoration: none;
-	padding: 10px 20px;
+	padding: 0 20px;
 	font-weight: 600;
 	font-size: 14px;
 	transition: font-size 0.3s ease, padding 0.3s ease, color 0.3s ease;
@@ -103,7 +102,7 @@ body {
 
 .header.scrolled .tabs ul li a {
 	font-size: 12px;
-	padding: 5px 10px;
+	padding: 0 15px;
 }
 
 
@@ -166,10 +165,18 @@ body {
 }
 
 .form-group input[type="number"]:hover,
-.form-group select:hover,
+.form-group select:hover {
+	outline: 1px solid black;
+}
+
 .form-group input[type="number"]:focus,
 .form-group select:focus {
 	outline: 1px solid #02226f;
+}
+
+.form-group select:focus,
+.form-group select:active {
+	background-color: #cce4ff;
 }
 
 
