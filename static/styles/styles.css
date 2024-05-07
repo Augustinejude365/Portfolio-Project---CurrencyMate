@@ -98,14 +98,17 @@ body {
 	transition: font-size 0.3s ease, padding 0.3s ease, color 0.3s ease;
 }
 
+.tabs ul li.active a,
 .tabs ul li a:hover {
-	color: #40ADFF;
+	color: #6DBCF8;
 }
 
 .header.scrolled .tabs ul li a {
 	font-size: 12px;
 	padding: 0 15px;
 }
+
+
 
 
 /******** OUR FORM STYLE HERE ***********/
