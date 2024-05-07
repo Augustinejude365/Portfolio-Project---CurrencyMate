@@ -13,7 +13,8 @@ document.getElementById('conversion-form').addEventListener('submit', function(e
 			} else {
 				const formattedAmount = data.result.toLocaleString('en-US', {
 					style: 'currency',
-					currency: toCurrency
+					currency: toCurrency,
+					minimumFractionDigits: 4
 				});
 				document.getElementById('result').textContent = `${amount.toFixed(2)} ${fromCurrency} is equal to ${formattedAmount}`;
 			}
