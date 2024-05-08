@@ -27,13 +27,40 @@ document.getElementById('conversion-form').addEventListener('submit', function(e
 
 
 window.addEventListener('scroll', function() {
-    const headers = document.querySelectorAll('.sub-header');
+	const headers = document.querySelectorAll('.sub-header');
 
-    headers.forEach(function(header) {
-        if (window.scrollY > 0) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
+	headers.forEach(function(header) {
+		if (window.scrollY > 0) {
+			header.classList.add('scrolled');
+		} else {
+			header.classList.remove('scrolled');
+		}
+	});
+});
+
+
+document.getElementById('contact-link').addEventListener('click', function(event) {
+	event.preventDefault();
+
+	const targetSection = document.getElementById('contact-us-id');
+	if (targetSection) {
+		targetSection.scrollIntoView({
+			behavior: 'smooth'
+		});
+	}
+
+	document.querySelector('.active').classList.remove('active');
+	this.classList.add('active');
+});
+
+
+document.getElementById('home-link').addEventListener('click', function(event) {
+	event.preventDefault();
+	window.scrollTo({
+		top: 0,
+		behavior: 'smooth'
+	});
+
+	document.querySelector('.active').classList.remove('active');
+	this.classList.add('active');
 });
