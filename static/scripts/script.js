@@ -1,3 +1,5 @@
+// Block to handle the form submission for the currency conversion,
+//  fetching data from the backend and updating the UI with the result or error message
 document.getElementById('conversion-form').addEventListener('submit', function(event) {
 	event.preventDefault();
 
@@ -26,6 +28,8 @@ document.getElementById('conversion-form').addEventListener('submit', function(e
 });
 
 
+
+// Block to implement header scroll effect
 window.addEventListener('scroll', function() {
 	const headers = document.querySelectorAll('.sub-header');
 
@@ -39,10 +43,24 @@ window.addEventListener('scroll', function() {
 });
 
 
+// Blocks to implement nav links scroll effect
+// CONVERTER
+document.getElementById('converter-link').addEventListener('click', function(event) {
+	event.preventDefault();
+	window.scrollTo({
+		top: 0,
+		behavior: 'smooth'
+	});
+
+	document.querySelector('.active').classList.remove('active');
+	this.classList.add('active');
+});
+
+// CONTACT US
 document.getElementById('contact-link').addEventListener('click', function(event) {
 	event.preventDefault();
 
-	const targetSection = document.getElementById('contact-us-id');
+	const targetSection = document.getElementById('contact-us');
 	if (targetSection) {
 		targetSection.scrollIntoView({
 			behavior: 'smooth'
@@ -54,13 +72,36 @@ document.getElementById('contact-link').addEventListener('click', function(event
 });
 
 
-document.getElementById('home-link').addEventListener('click', function(event) {
-	event.preventDefault();
-	window.scrollTo({
-		top: 0,
-		behavior: 'smooth'
+// Block to dynamically change the style of the nav links when section is visible
+const sections = document.querySelectorAll('.converter-container, .about-wrapper, .contact-wrapper');
+
+let currentActiveSection = null;
+
+window.addEventListener('scroll', function() {
+	const scrollY = window.scrollY;
+
+	sections.forEach(section => {
+		const sectionTop = section.offsetTop;
+		const sectionHeight = section.offsetHeight;
+		const isVisible = scrollY >= sectionTop && scrollY < sectionTop + sectionHeight;
+
+		if (isVisible) {
+			currentActiveSection = section;
+			return; // Exit the loop once a visible section is found
+		}
 	});
 
-	document.querySelector('.active').classList.remove('active');
-	this.classList.add('active');
+	if (currentActiveSection) {
+		const previouslyActiveLink = document.querySelector('.active');
+		if (previouslyActiveLink) {
+			previouslyActiveLink.classList.remove('active');
+		}
+
+		const currentSectionId = currentActiveSection.id;
+		const listItemForActiveSection = document.querySelector(`nav.tabs ul li a[href="#${currentSectionId}"]`);
+
+		if (listItemForActiveSection) {
+			listItemForActiveSection.parentElement.classList.add('active');
+		}
+	}
 });
