@@ -1,22 +1,18 @@
 .contact-wrapper {
 	display: flex;
-	font-family: "Josefin Sans", sans-serif;
 	justify-content: center;
-	align-items: center;
-	height: 100vh;
+	font-family: "Josefin Sans", sans-serif;
 	background-image: url('../images/contact-us-bg.jpg');
 	background-size: cover;
 	background-attachment: fixed;
-	z-index: -1;
-	padding: 20px;
 	color: white;
 }
 
 .contact-container {
 	display: flex;
-	max-width: 1200px;
-	padding: 20px;
 	justify-content: space-between;
+	max-width: 1200px;
+	margin: 100px;
 }
 
 
@@ -24,7 +20,7 @@
 /* CONTACT DETAILS */
 
 .contact-us {
-	padding: 50px;
+	padding: 30px 50px;
 }
 
 .contact-details-gp {
@@ -69,16 +65,15 @@
 /* CONTACT US FORM */
 
 .contact-form {
-	width: 50%;
-	background-color: white;
-	color: black;
-	padding: 50px;
-	border-radius: 10px;
-	border: 1px solid #ccc;
-	border-radius: 7px;
-	font-family: "Josefin Sans", sans-serif;
 	display: flex;
 	flex-direction: column;
+	width: 50%;
+	font-family: "Josefin Sans", sans-serif;
+	background-color: white;
+	color: black;
+	border-radius: 10px;
+	border: 1px solid #ccc;
+	padding: 30px 50px;
 }
 
 .contact-form form {
@@ -102,6 +97,7 @@
 
 .contact-form button {
 	margin-top: 20px;
+	margin-right: auto;
 	background-color: #02226f;
 	color: white;
 	padding: 12px 20px;
@@ -110,7 +106,6 @@
 	cursor: pointer;
 	transition: background-color 0.3s ease;
 	font-size: 15px;
-	margin-right: auto;
 
 }
 
