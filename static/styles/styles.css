@@ -95,13 +95,17 @@ body {
 	color: white;
 	text-decoration: none;
 	padding: 0 20px;
-	font-weight: 600;
+	font-weight: 700;
 	font-size: 14px;
-	transition: font-size 0.3s ease, padding 0.3s ease, color 0.3s ease;
+	transition: font-size 0.3s ease, padding 0.3s ease, color 0.3s ease, font-weight 0.2s ease;
 }
 
-.tabs ul li.active a,
 .tabs ul li a:hover {
+	color: #ba82eb;
+
+}
+
+.tabs ul li.active a {
 	color: #6DBCF8;
 }
 
@@ -114,7 +118,7 @@ body {
 
 
 /******** OUR FORM STYLE HERE ***********/
-.container {
+.converter-container {
 	margin: auto;
 	margin-top: 150px;
 	margin-bottom: 100px;
@@ -144,6 +148,7 @@ body {
 
 .flex-button {
 	align-self: flex-end;
+	margin-right: 10px;
 }
 
 .flex-input {
