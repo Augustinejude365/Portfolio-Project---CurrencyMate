@@ -3,10 +3,10 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Currency Converter</title>
+		<title>CurrencyMate | Home</title>
 		<link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
 		<link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
-
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/styles.css') }}">
 		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/sections.css') }}">
 	</head>
@@ -60,26 +60,44 @@
 		</div>
 
 		<div class="contact-wrapper">
-			<div class="contact-background"></div>
-			<section class="contact-section">
-				<div class="contact-container">
-					<div class="contact-details">
-						<!-- Contact details here -->
-						<h2>Contact Details</h2>
-						<p>Email: contact@example.com</p>
-						<p>Phone: +1234567890</p>
-						<p>Address: 123 Main St, City</p>
+			<section class="contact-container">
+				<div class="contact-us">
+					<h2>Contact Us</h2>
+					<div class="contact-details-gp">
+						<div class="contact-details">
+							<div class="icon-details">
+								<i class="fa-regular fa-paper-plane fa-2xl" style="color: #ffffff;"></i>
+								<span class="details">EMAIL:</span>
+								<span class="sub-details">emmanueldev247@duck.com</span>
+							</div>
+							<div class="icon-details">
+								<i class="fa-solid fa-location-dot fa-2xl" style="color: #ffffff;"></i>
+								<span class="details">ADDRESS:</span>
+								<span class="sub-details">Lagos, Lagos Nigeria</span>
+							</div>
+							<div class="icon-details">
+								<i class="fa-solid fa-phone fa-2xl" style="color: #ffffff;"></i>
+								<span class="details">PHONE:</span>
+								<span class="sub-details">+234-805-020-8547</span>
+							</div>
+							<div class="icon-details">
+								<i class="fa-brands fa-whatsapp fa-2xl" style="color: #ffffff;"></i>
+								<span class="details">WHATSAPP:</span>
+								<span class="sub-details">+234-805-020-8547</span>
+							</div>
+						</div>
 					</div>
-					<div class="contact-form">
-						<!-- Contact form here -->
-						<h2>Get in Touch</h2>
-						<form>
-							<input type="text" placeholder="Your Name" required>
-							<input type="email" placeholder="Your Email" required>
-							<textarea placeholder="Your Message" required></textarea>
-							<button type="submit">Send Message</button>
-						</form>
-					</div>
+				</div>
+				<div class="contact-form">
+					<!-- Contact form here -->
+					<h2>Get in Touch</h2>
+					<form>
+						<input id="sender_name" type="text" placeholder="Name" required>
+						<input id="sender_email" type="email" placeholder="Email" required>
+						<input id="sender_subject" type="text" placeholder="Subject" required>
+						<textarea id="sender_message" placeholder="Message" required></textarea>
+						<button type="submit">Send Message</button>
+					</form>
 				</div>
 			</section>
 		</div>
