@@ -11,7 +11,7 @@
 		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/sections.css') }}">
 	</head>
 	<body>
-		<header class="header sub-header">
+		<header class="header sub-header" id="header">
 			<div class="logo-container">
 				<img src="{{ url_for('static', filename='images/cm-logo.png') }}" alt="CurrencyMate Logo" class="logo sub-header">
 				<div class="logo-text">
@@ -21,10 +21,10 @@
 			</div>
 			<nav class="tabs sub-header">
 				<ul>
-					<li class="active"><a href="#home">Home</a></li>
-					<li><a href="#converter">Help</a></li>
-					<li><a href="#converter">About Us</a></li>
-					<li><a href="#converter">Contact Us</a></li>
+					<li class="active" id="home-link"><a href="#header">Home</a></li>
+					<li id="help-link"><a href="#help">Help</a></li>
+					<li id="about-link"><a href="#about-us">About Us</a></li>
+					<li id="contact-link"><a href="#contact-us">Contact Us</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -59,7 +59,7 @@
 			<div id="result"></div>
 		</div>
 
-		<div class="contact-wrapper">
+		<div class="contact-wrapper" id="contact-us-id">
 			<section class="contact-container">
 				<div class="contact-us">
 					<h2>Contact Us</h2>
