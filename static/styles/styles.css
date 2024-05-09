@@ -1,10 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Titillium+Web:ital,wght@0,400;1,600&display=swap');
 
-body {
-	font-family: Arial, sans-serif;
+* {
 	margin: 0;
 	padding: 0;
-	height: 100%;
+	box-sizing: border-box;
+	font-family: "Trebuchet MS", Verdana, Tahoma, Arial,sans-serif;
+}
+
+body {
+	min-height: 100vh;
 	width: 100%;
 }
 
@@ -13,12 +17,13 @@ body {
 	top: 0;
 	left: 0;
 	width: 100%;
+	padding: 10px;
 	background-color: #02226f;
 	display: flex;
 	align-items: center;
-	transition: box-shadow 0.3s ease, padding 0.3s ease;
+	justify-content: space-between;
+	transition: all 0.3s ease;
 	z-index: 1000;
-	padding: 10px;
 }
 
 .header.scrolled {
@@ -32,10 +37,11 @@ body {
 	padding: 2px 0;
 }
 
+
 .logo {
 	height: 64px;
 	width: 73px;
-	transition: height 0.3s ease, width 0.3s ease;
+	transition: all 0.3s ease;
 	margin-right: 5px
 }
 
@@ -57,7 +63,7 @@ body {
 	font-weight: 400;
 	font-style: normal;
 	font-size: 37px;
-	transition: font-size 0.3s ease;
+	transition: all 0.3s ease;
 }
 
 
@@ -79,25 +85,25 @@ body {
 }
 
 .tabs {
-	margin-left: auto;
+	display: flex;
+	align-items: center;
 }
 
 .tabs ul {
 	list-style: none;
-	padding-right: 50px;
+	margin-right: 3rem;
 }
 
 .tabs ul li {
-	display: inline;
+	display: inline-block;
 }
 
 .tabs ul li a {
 	color: white;
 	text-decoration: none;
-	padding: 0 20px;
 	font-weight: 700;
-	font-size: 14px;
-	transition: font-size 0.3s ease, padding 0.3s ease, color 0.3s ease, font-weight 0.2s ease;
+	transition: all 0.3s ease;
+	margin-left: 3rem;
 }
 
 .tabs ul li a:hover {
@@ -110,21 +116,33 @@ body {
 }
 
 .header.scrolled .tabs ul li a {
-	font-size: 12px;
+	font-size: 14px;
 	padding: 0 15px;
 }
 
+#check {
+	display: none;
+}
 
+.icons {
+	position: absolute;
+	right: 5%;
+	font-size: 2.8rem;
+	color: white;
+	cursor: pointer;
+	display: none;
+	transition: all .3s ease;
+}
 
 
 /******** OUR FORM STYLE HERE ***********/
 .converter-container {
 	margin: auto;
-	margin-top: 150px;
-	margin-bottom: 100px;
+	margin-top: 200px;
+	margin-bottom: 150px;
+	width: 90%;
 	display: flex;
 	flex-direction: column;
-	width: fit-content;
 	padding: 20px;
 	border: 1px solid #ccc;
 	border-radius: 7px;
@@ -142,7 +160,7 @@ body {
 .flex-form p {
 	font-weight: 700;
 	color: #02226f;
-	font-size: 18px;
+	font-size: 25px;
 	font-family: "Josefin Sans", sans-serif;
 }
 
@@ -214,4 +232,157 @@ body {
 #result {
 	font-weight: bold;
 	margin-bottom: 10px;
+}
+
+
+footer {
+	background-color: #02226f;
+	color: white;
+	height: 60px;
+	width: 100%;
+	border-top: 1px solid #CCCCCC;
+	bottom: 0;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+
+
+
+/* RESPONSIVENESS FOR SMALLER */
+
+@media (max-width: 850px) {
+	.header,
+	.header.scrolled {
+		padding: 5px 10px;
+	}
+
+	.logo-container {
+		padding: 0;
+	}
+
+	.logo,
+	.header.scrolled .logo {
+		height: 48px;
+		width: 55px;
+		margin-right: 3px;
+	}
+
+	.logo-text {
+		font-weight: bold;
+	}
+
+	.logo-name,
+	.header.scrolled .logo-name {
+		font-size: 25px;
+	}
+
+	.slogan,
+	.header.scrolled .slogan {
+		font-size: 6px;
+	}
+
+	.tabs ul {
+		margin-right: 1rem;
+	}
+
+
+	.icons {
+		display: inline-flex;
+	}
+
+	.icons #close-icon {
+		display: none;
+	}
+
+	#check:checked~.icons #menu-icon {
+		display: none;
+	}
+
+	#check:checked~.icons #close-icon {
+		display: block;
+	}
+
+	.tabs {
+		position: absolute;
+		top: 100%;
+		height: 0;
+		left: 0;
+		width: 100%;
+		overflow: hidden;
+		background:#2c3e50;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		transition: all .3s ease;
+	}
+
+	#check:checked~.tabs {
+		height: 17rem;
+	}
+
+	.tabs ul {
+		margin: 0;
+	}
+
+	.tabs ul li {
+		text-align: center;
+		display: block;
+		font-size: 1.1rem;
+		margin: 1.5rem 0;
+		line-height: 2.5rem;
+	}
+
+	.tabs ul li a,
+	.header.scrolled .tabs ul li a {
+		margin-left: 0;
+	}
+
+	.converter-container {
+		max-width: 90%;
+		margin: 100px auto 50px auto;
+		padding: 10px;
+	}
+
+	.flex-form p {
+		font-size: 16px;
+	}
+
+	.flex-button {
+		margin: auto auto;
+	}
+
+	.form-group {
+		margin: 5px;
+	}
+
+	.form-group label {
+		font-size: 12px;
+	}
+
+	.form-group input[type="number"],
+	.form-group select {
+		width: 100%;
+		padding: 8px;
+		margin-top: 5px;
+		height: 30px;
+		font-size: 10px;
+	}
+
+	.flex-button button {
+		margin-top: 10px;
+		padding: 10px 16px;
+		font-size: 12px;
+	}
+
+	#result {
+		font-size: 16px;
+		text-align: center;
+	}
+
+	footer {
+		height: 40px;
+		font-size: 12px;
+	}
+
 }
