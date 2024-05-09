@@ -251,7 +251,7 @@ footer {
 
 /* RESPONSIVENESS FOR SMALLER */
 
-@media (max-width: 850px) {
+@media only screen and (max-width: 850px) {
 	.header,
 	.header.scrolled {
 		padding: 5px 10px;
