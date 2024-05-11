@@ -10,6 +10,7 @@
 body {
 	min-height: 100vh;
 	width: 100%;
+	background-color: #FAFBFD;
 }
 
 .header {
@@ -136,6 +137,13 @@ body {
 
 
 /******** OUR FORM STYLE HERE ***********/
+.cover-conv {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	background-color: white;
+}
+
 .converter-container {
 	margin: auto;
 	margin-top: 200px;
@@ -148,6 +156,7 @@ body {
 	border-radius: 7px;
 	max-width: 1000px;
 	box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.2);
+	justify-content: center;
 }
 
 .flex-form {
@@ -229,6 +238,31 @@ body {
 	background-color: #134fa9;
 }
 
+
+
+/* Styling for success messages */
+.flash-message.success-message {
+	background-color: #d4edda; /* Light green background */
+	border-color: #c3e6cb; /* Light green border */
+	color: #155724; /* Dark green text */
+	padding: 10px; /* Padding around the message */
+	margin-bottom: 10px; /* Spacing between messages */
+	border: 1px solid transparent; /* Border around the message */
+	border-radius: 5px; /* Rounded corners */
+}
+
+/* Styling for error messages */
+.flash-message.error-messages  {
+	background-color: #f8d7da; /* Light red background */
+	border-color: #f5c6cb; /* Light red border */
+	color: #721c24; /* Dark red text */
+	padding: 10px; /* Padding around the message */
+	margin-bottom: 10px; /* Spacing between messages */
+	border: 1px solid transparent; /* Border around the message */
+	border-radius: 5px; /* Rounded corners */
+}
+
+
 #result {
 	font-weight: bold;
 	margin-bottom: 10px;
@@ -249,7 +283,7 @@ footer {
 
 
 
-/* RESPONSIVENESS FOR SMALLER */
+/* RESPONSIVENESS FOR SMALLER SCREENS */
 
 @media only screen and (max-width: 850px) {
 	.header,
@@ -336,6 +370,10 @@ footer {
 	.tabs ul li a,
 	.header.scrolled .tabs ul li a {
 		margin-left: 0;
+	}
+
+	.cover-conv {
+		height: inherit;
 	}
 
 	.converter-container {
