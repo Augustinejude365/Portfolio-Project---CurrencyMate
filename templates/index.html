@@ -6,7 +6,10 @@
 		<title>CurrencyMate | Home</title>
 		<link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
 		<link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+		<link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+		<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />-->
+
+		<!-- ****************local CSS************** -->
 		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/styles.css') }}">
 		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/sections.css') }}">
 	</head>
@@ -19,56 +22,139 @@
 					<p class="slogan sub-header">...YOUR CONVERSION COMPANION, WHEREVER YOU GO</p>
 				</div>
 			</div>
+
+			<input type="checkbox" id="check">
+			<label for="check" class="icons">
+				<i class='bx bx-menu' id="menu-icon"></i>
+				<i class='bx bx-x' id="close-icon"></i>
+			</label>
 			<nav class="tabs sub-header">
 				<ul>
 					<li class="active" id="converter-link"><a href="#converter">Converter</a></li>
 					<li id="about-link"><a href="#about-us">About Us</a></li>
-					<li id="help-link"><a href="#help">Help</a></li>
+					<!--<li id="help-link"><a href="#help">Help</a></li>-->
 					<li id="contact-link"><a href="#contact-us">Contact Us</a></li>
 				</ul>
 			</nav>
 		</header>
-		<div class="converter-container" id="converter">
-			<form id="conversion-form" class="flex-form">
-				<p>CONVERT</p>
-				<div class="flex-input">
-					<div class="form-group">
-						<label for="amount">Amount</label>
-						<input type="number" id="amount" step="any" required>
+		<div class="cover-conv">
+			<div class="converter-container" id="converter">
+				<form id="conversion-form" class="flex-form">
+					<p>CONVERT</p>
+					<div class="flex-input">
+						<div class="form-group">
+							<label for="amount">Amount</label>
+							<input type="number" id="amount" step="any" required>
+						</div>
+						<div class="form-group">
+							<label for="fromCurrency">From</label>
+							<select id="fromCurrency" required>
+								<option value="" disabled selected>Select From Currency</option>
+								<!-- I Populated dynamically with currency options in script -->
+								<!-- Example: <option value="USD">United States Dollar (USD)</option> -->
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="toCurrency">To</label>
+							<select id="toCurrency" required>
+								<option value="" disabled selected>Select From Currency</option>
+							</select>
+						</div>
 					</div>
-					<div class="form-group">
-						<label for="fromCurrency">From</label>
-						<select id="fromCurrency" required>
-							<option value="" disabled selected>Select From Currency</option>
-							<!-- I Populated dynamically with currency options in script -->
-							<!-- Example: <option value="USD">United States Dollar (USD)</option> -->
-						</select>
-
+					<div class="flex-button">
+						<button type="submit">Convert</button>
 					</div>
-					<div class="form-group">
-						<label for="toCurrency">To</label>
-						<select id="toCurrency" required>
-							<option value="" disabled selected>Select From Currency</option>
-						</select>
-					</div>
-				</div>
-				<div class="flex-button">
-					<button type="submit">Convert</button>
-				</div>
-			</form>
-			<div id="result"></div>
+				</form>
+				<div id="result"></div>
+			</div>
 		</div>
 
-		<div class="contact-wrapper" id="contact-us">
-			<section class="contact-container">
+
+		<!----- ********** ABOUT US *************** --->
+		<section class="about-wrapper" id="about-us">
+			<div class="about-container">
+				<h2>About Us</h2>
+				<div class="name-slogan">
+					<span class="span-name">CurrencyMate. </span><span>Your conversion companion</span>
+				</div>
+				<div class="about-stories">
+					<p>CurrencyMate is your one-stop shop for all things currency conversion! Whether you're a traveler exploring new destinations, an online shopper browsing global markets, or a finance enthusiast navigating international transactions, CurrencyMate is here to make your life easier.</p>
+				</div>
+
+				<hr class="section-break">
+
+				<div class="history-section">
+					<h3>Our History</h3>
+					<div class="timeline">
+						<div class="time-card">
+							<h4>March 28, 2024</h4>
+							<p>CurrencyMate is founded by three passionate tech enthusiasts, Jude Augustine, Adetona Mubarak and Emmanuel Ademola</p>
+						</div>
+						<div class="time-card">
+							<h4>April 2, 2024</h4>
+							<p>With a clear vision in mind, we presented our proposal to address a crucial challenge: simplifying currency conversion through a user-friendly and efficient app.</p>
+						</div>
+						<div class="time-card">
+							<h4>May 1, 2024</h4>
+							<p>After relentless dedication and hard work, we proudly unveiled the Minimum Viable Product (MVP) of CurrencyMate, serving the needs of our initial users.</p>
+						</div>
+					</div>
+				</div>
+
+				<hr class="section-break">
+
+				<div class="team-container">
+					<h3>Meet the Team</h3>
+					<div class="team-members">
+						<div class="team-member">
+							<img id="jude" src="{{ url_for('static', filename='images/jude.jpg') }}" alt="Augustine Jude - Team member">
+							<h4>Augustine Jude Ifeanyi</h4>
+							<h5>Team Lead &amp; Back-end Developer</h5>
+							<p>With an extensive background in back-end development and project management, Augustine is assigned the team's leadership and Backend role.</p>
+							<div class="team-socials">
+								<a href="https://github.com/Augustinejude365"><i class='bx bxl-github' style='color:#000000'></i></a>
+								<a href="#"><i class='bx bxl-linkedin' style='color:#000000'></i></a>
+								<a href="#"><i class='bx bxl-twitter' style='color:#000000'></i></a>
+							</div>
+						</div>
+						<div class="team-member">
+							<img id="mubby" src="{{ url_for('static', filename='images/mubby.jpg') }}" alt="Adetona Mubarak - Team member">
+							<h4>Adetona Mubarak Ramadan</h4>
+							<h5>Front-end Developer</h5>
+							<p>Leveraging upon his expertise in UI/UX design and front-end technologies, Sam is entrusted with the front-end development tasks</p>
+							<div class="team-socials">
+								<a href="https://github.com/Mubby2003"><i class='bx bxl-github' style='color:#000000'></i></a>
+								<a href="#"><i class='bx bxl-linkedin' style='color:#000000'></i></a>
+								<a href="#"><i class='bx bxl-twitter' style='color:#000000'></i></a>
+							</div>
+						</div>
+						<div class="team-member">
+							<img id="emmanuel" src="/static/images/emmanuel.jpeg" alt="Emmanuel Ademola - Team member">
+							<h4>Emmanuel Ademola &lt;&sol;Emmy-Dee&gt;</h4>
+							<h5>Full-stack developer</h5>
+							<p>Drawing on his deep knowledge of infrastructure design &amp; management, Emmanuel, orchestrates the design and management of APIs, facilitating seamless communication within our system.</p>
+							<div class="team-socials">
+								<a href="https://github.com/emmanueldev247"><i class='bx bxl-github' style='color:#000000'></i></a>
+								<a href="https://www.linkedin.com/in/emmanueldev247"><i class='bx bxl-linkedin' style='color:#000000'></i></a>
+								<a href="https://twitter.com/emmanueldev247"><i class='bx bxl-twitter' style='color:#000000'></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+		</section>
+
+		<!----- ********** CONTACT US *************** --->
+		<section class="contact-wrapper" id="contact-us">
+			<div class="contact-container">
 				<div>
-					<h2>Contact Us</h2>
+					<h2 class="contact-h2">Contact Us</h2>
 					<div class="contact-details-gp">
 						<div class="contact-details">
 							<div class="icon-details">
 								<i class="fa-regular fa-paper-plane fa-2xl" style="color: #ffffff;"></i>
 								<span class="details">EMAIL:</span>
-								<span class="sub-details">emmanueldev247@duck.com</span>
+								<span class="sub-details">support@emmanueldev247.tech</span>
 							</div>
 							<div class="icon-details">
 								<i class="fa-solid fa-location-dot fa-2xl" style="color: #ffffff;"></i>
@@ -91,33 +177,30 @@
 				<div class="contact-form">
 					<!-- Contact form here -->
 					<h2>Get in Touch</h2>
-					<form>
-						<input id="sender_name" type="text" placeholder="Name" required>
-						<input id="sender_email" type="email" placeholder="Email" required>
-						<input id="sender_subject" type="text" placeholder="Subject" required>
-						<textarea id="sender_message" placeholder="Message" required></textarea>
+					<form action="/contact" method="POST" name="contact-us">
+						<input id="sender_name" type="text" name="name" placeholder="Name" required>
+						<input id="sender_email" type="email" name="email" placeholder="Email" required>
+						<input id="sender_subject" type="text" name="subject" placeholder="Subject" required>
+						<textarea id="sender_message" name="message" placeholder="Message" required></textarea>
 						<button type="submit">Send Message</button>
 					</form>
+					<!-- Display flash message if present -->
+					{% with messages = get_flashed_messages() %}
+					{% if messages %}
+					{% for message, message_type in messages %}
+					<div class="flash-message {% if message_type == 'success' %}success-message{% elif message_type == 'error' %}error-message{% endif %}">
+						{{ message }}
+					</div>
+					{% endfor %}
+					{% endif %}
+					{% endwith %}
 				</div>
-			</section>
-		</div>
-
-
-
-		<section class="about-wrapper" id="about-us">
-			<h2>About CurrencyMate</h2>
-			<p>This user-friendly currency converter allows you to convert between a wide range of major and minor currencies. Our extensive list is constantly updated to reflect the global market, ensuring you receive accurate exchange rates.</p>
+			</div>
 		</section>
-		<section class="features">
-			<h2>More Features:</h2>
-			<ul>
-				<li>Live exchange rates for real-time conversions.</li>
-			</ul>
-		</section>
-		<section class="security">
-			<h2>Security and Privacy</h2>
-			<p>Your financial data is secure. We employ industry-standard security practices to safeguard your information. We are committed to protecting your privacy and will never share your data with third parties without your consent. For more details, please refer to our <a href="#">Privacy Policy</a>.</p>
-		</section>
+		<footer>
+			<p>&copy; 2024 CurrencyMate. All rights reserved.</p>
+			<i class='bx bxl-facebook' style='color:#ffffff' ></i>
+		</footer>
 
 		<script src="{{ url_for('static', filename='scripts/script.js') }}"></script>
 		<script src="{{ url_for('static', filename='scripts/currencyList.js') }}"></script>
