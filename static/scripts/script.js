@@ -42,7 +42,6 @@ window.addEventListener('scroll', function() {
 	});
 });
 
-
 // Blocks to implement nav links scroll effect
 // CONVERTER
 document.getElementById('converter-link').addEventListener('click', function(event) {
@@ -70,6 +69,23 @@ document.getElementById('contact-link').addEventListener('click', function(event
 	document.querySelector('.active').classList.remove('active');
 	this.classList.add('active');
 });
+
+// ABOUT US
+document.getElementById('about-link').addEventListener('click', function(event) {
+	event.preventDefault();
+
+	const targetSection = document.getElementById('about-us');
+	if (targetSection) {
+		targetSection.scrollIntoView({
+			behavior: 'smooth'
+		});
+	}
+
+	document.querySelector('.active').classList.remove('active');
+	this.classList.add('active');
+});
+
+
 
 
 // Block to dynamically change the style of the nav links when section is visible
