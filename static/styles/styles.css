@@ -105,6 +105,7 @@ body {
 	font-weight: 700;
 	transition: all 0.3s ease;
 	margin-left: 3rem;
+	padding: 0 15px;
 }
 
 .tabs ul li a:hover {
