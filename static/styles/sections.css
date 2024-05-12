@@ -391,22 +391,32 @@ hr {
 }
 
 
+
 .flash-message {
+  border-color: #c3e6cb; /* Light green border */
+  border: 1px solid transparent; /* Border around the message */
   padding: 10px 20px;
   margin: 10px 0;
   border-radius: 5px;
+  opacity: 1;
+  transition: all 1s ease-in-out;
+  collapse: collapse;
 }
 
+
 .flash-message.success {
-  background-color: lightgreen;
+  background-color: rgba(144, 238, 144, 0.8);
   color: darkgreen;
 }
 
 .flash-message.error {
-  background-color: lightcoral;
+  background-color: rgba(240, 128, 128, 0.8);
   color: darkred;
 }
 
+.flash-message.fade-out {
+  opacity: 0;
+}
 
 
 /* Responsive adjustments */
