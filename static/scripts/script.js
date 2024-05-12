@@ -7,7 +7,7 @@ document.getElementById('conversion-form').addEventListener('submit', function(e
 	const fromCurrency = document.getElementById('fromCurrency').value;
 	const toCurrency = document.getElementById('toCurrency').value;
 
-	fetch(`/convert?amount=${amount}&from_currency=${fromCurrency}&to_currency=${toCurrency}`)
+	fetch(`/currencymate/convert?amount=${amount}&from_currency=${fromCurrency}&to_currency=${toCurrency}`)
 		.then(response => response.json())
 		.then(data => {
 			if (data.error) {
@@ -41,6 +41,8 @@ window.addEventListener('scroll', function() {
 		}
 	});
 });
+
+
 
 // Blocks to implement nav links scroll effect
 // CONVERTER
@@ -94,30 +96,51 @@ const sections = document.querySelectorAll('.converter-container, .about-wrapper
 let currentActiveSection = null;
 
 window.addEventListener('scroll', function() {
-	const scrollY = window.scrollY;
+        const scrollY = window.scrollY;
 
-	sections.forEach(section => {
-		const sectionTop = section.offsetTop;
-		const sectionHeight = section.offsetHeight;
-		const isVisible = scrollY >= sectionTop && scrollY < sectionTop + sectionHeight;
+        sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const isVisible = scrollY >= sectionTop && scrollY < sectionTop + sectionHeight;
 
-		if (isVisible) {
-			currentActiveSection = section;
-			return; // Exit the loop once a visible section is found
-		}
-	});
+                if (isVisible) {
+                currentActiveSection = section;
+                return; // Exit the loop once a visible section is found
+                }
+                });
 
-	if (currentActiveSection) {
-		const previouslyActiveLink = document.querySelector('.active');
-		if (previouslyActiveLink) {
-			previouslyActiveLink.classList.remove('active');
-		}
+        if (currentActiveSection) {
+        const previouslyActiveLink = document.querySelector('.active');
+        if (previouslyActiveLink) {
+        previouslyActiveLink.classList.remove('active');
+        }
 
-		const currentSectionId = currentActiveSection.id;
-		const listItemForActiveSection = document.querySelector(`nav.tabs ul li a[href="#${currentSectionId}"]`);
+        const currentSectionId = currentActiveSection.id;
+        const listItemForActiveSection = document.querySelector(`nav.tabs ul li a[href="#${currentSectionId}"]`);
 
-		if (listItemForActiveSection) {
-			listItemForActiveSection.parentElement.classList.add('active');
-		}
-	}
+        if (listItemForActiveSection) {
+            listItemForActiveSection.parentElement.classList.add('active');
+        }
+        }
 });
+
+// Function to handle flash messages and scrolling
+function handleFlashMessages() {
+    const flashMessages = document.querySelectorAll(".flash-message");
+
+    for (let i = 0; i < flashMessages.length; i++) {
+        const message = flashMessages[i];
+
+        message.scrollIntoView({ behavior: "smooth" });
+
+        setTimeout(function() {
+            message.classList.add("fade-out");
+            }, 8500);
+
+        setTimeout(function() {
+                message.parentNode.removeChild(message);
+                }, 10000);
+    }
+}
+
+window.onload = handleFlashMessages;
