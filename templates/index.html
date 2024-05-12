@@ -174,7 +174,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="contact-form">
+				<div id="contact-us-form" class="contact-form">
 					<!-- Contact form here -->
 					<h2>Get in Touch</h2>
 					<form action="/contact" method="POST" name="contact-us">
@@ -188,7 +188,7 @@
 					{% with messages = get_flashed_messages() %}
 					{% if messages %}
 					{% for message, message_type in messages %}
-					<div class="flash-message {% if message_type == 'success' %}success-message{% elif message_type == 'error' %}error-message{% endif %}">
+					<div class="flash-message {% if message_type == 'success' %}success{% elif message_type == 'error' %}error{% endif %}">
 						{{ message }}
 					</div>
 					{% endfor %}
