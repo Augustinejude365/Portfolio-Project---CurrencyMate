@@ -11,6 +11,7 @@ import os
 import requests
 import smtplib
 from flask import Flask, flash, jsonify, redirect, render_template, request, url_for
+from whitenoise import WhiteNoise
 from wtforms import Form, StringField, TextAreaField, validators
 
 
@@ -30,9 +31,11 @@ class ContactForm(Form):
     message = TextAreaField('Message', [validators.Length(min=10), validators.DataRequired()])
 
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/currencymate/static')
 app.secret_key = b'\xf2PUc\x92M\x95U\xc9*\x9b\xf8\xa8\x8d\xd7-\xea\xd6\xd4\x19 \xe2\xe9\x98'
 app.url_map.strict_slashes = False
+app.wsgi_app = WhiteNoise(app.wsgi_app)
+app.static_folder = 'static'
 
 
 @app.route("/")
