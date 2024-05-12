@@ -58,6 +58,8 @@ urllib3==1.25.8
 webencodings==0.5.1
 Werkzeug==2.1.0
 zipp==3.7.0
-wtforms
+flask
 flask_mail
 email_validator
+requests
+wtforms
