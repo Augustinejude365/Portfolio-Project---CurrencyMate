@@ -30,7 +30,6 @@ class ContactForm(Form):
     subject = StringField('Subject', [validators.Length(min=1, max=100), validators.DataRequired()])
     message = TextAreaField('Message', [validators.Length(min=10), validators.DataRequired()])
 
-
 app = Flask(__name__, static_url_path='/currencymate/static')
 app.secret_key = b'\xf2PUc\x92M\x95U\xc9*\x9b\xf8\xa8\x8d\xd7-\xea\xd6\xd4\x19 \xe2\xe9\x98'
 app.url_map.strict_slashes = False
@@ -68,27 +67,28 @@ def convert():
         return jsonify({"error": result})
 
 
-@app.route("/contact", methods=['POST'])
+@app.route("/contact", methods=['GET', 'POST'])
 def contact():
-    form = ContactForm(request.form)
-    if request.method == 'POST' and form.validate():
-        name = form.name.data
-        email = form.email.data
-        subject = form.subject.data
-        message = form.message.data
+    form = ContactForm()
 
-        # Send email notification
-        success, error_message = send_email(subject, message, name, email)
-        if success:
-            flash(('Your message has been sent successfully.', 'success'))
+    if request.method == 'POST':
+        form = ContactForm(request.form)
+        if form.validate():
+            name = form.name.data
+            email = form.email.data
+            subject = form.subject.data
+            message = form.message.data
+
+            success, error_message = send_email(subject, message, name, email)
+            if success:
+                flash(('Your message has been sent successfully.', 'success'))
+            else:
+                flash((f'Failed to send email: {error_message}', 'error'))
         else:
-            flash((f'Failed to send email: {error_message}', 'error'))
-    else:
-        for field, errors in form.errors.items():
-            for error in errors:
-                flash((f"Error in {field}: {error}", 'error'))
-
-    return redirect(url_for('index', _anchor='contact-us-form'))
+            for field, errors in form.errors.items():
+                for error in errors:
+                    flash((f"Error in {field}: {error}", 'error'))
+    return render_template('index.html', form=form)
 
 
 def convert_currency(amount, from_currency, to_currency):
