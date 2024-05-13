@@ -1,4 +1,4 @@
-#!/c/Users/TOSHIBA/Documents/Portfolio-Project---CurrencyMate/my-venv/Scripts/python
+#!/usr/bin/env python3
 
 """ DON'T DELETE!!!!
 shebang for my local windows venv
