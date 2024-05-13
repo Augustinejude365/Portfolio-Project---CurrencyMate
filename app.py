@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/c/Users/TOSHIBA/Documents/Portfolio-Project---CurrencyMate/my-venv/Scripts/python
 
 """ DON'T DELETE!!!!
 shebang for my local windows venv
@@ -88,7 +88,7 @@ def contact():
             for field, errors in form.errors.items():
                 for error in errors:
                     flash((f"Error in {field}: {error}", 'error'))
-    return render_template('index.html', form=form)
+    return render_template('index.html', scroll_to_contact=True)
 
 
 def convert_currency(amount, from_currency, to_currency):
