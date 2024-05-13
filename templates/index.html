@@ -184,6 +184,17 @@
 						<textarea id="sender_message" name="message" placeholder="Message" required></textarea>
 						<button type="submit">Send Message</button>
 					</form>
+					<!-- Scroll if GET request sent to /contact -->
+					{% if scroll_to_contact %}
+					<script>
+  					window.onload = function() {
+    					const targetElement = document.getElementById("contact-us");
+    					if (targetElement) {
+								targetElement.scrollIntoView({ behavior: "smooth" });
+							}
+						};
+					</script>
+					{% endif %}
 					<!-- Display flash message if present -->
 					{% with messages = get_flashed_messages() %}
 					{% if messages %}
